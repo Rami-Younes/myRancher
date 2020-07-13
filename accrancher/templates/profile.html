@@ -1,0 +1,43 @@
+
+{% extends "base.html"%}
+
+{% load static%}
+{% block body%}
+<center class="add_form">
+    <img src="{{profile.img.url}}" name="aboutme" width="140" height="140" border="0" class="img-circle"></a>
+    <h3 class="media-heading">{{profile.user}} </h3>
+    <span><strong>Skills: </strong></span>
+    <span class="label label-warning">HTML5/CSS</span>
+    <span class="label label-info">Adobe CS 5.5</span>
+    <span class="label label-info">Microsoft Office</span>
+    <span class="label label-success">Windows XP, Vista, 7</span>
+</center>
+<hr>
+<center>
+    <p class="text-center"><strong>Bio: </strong><br>
+        {{profile.bio}}</p>
+    <br>
+</center>
+<div class="row">
+    <div class="edit-profile">
+        <a href="{% url 'accrancher:edit_profile' profile.slug%}">Edit Profile </a><br>
+    </div>
+</div>
+{% endblock %}
+<!--<center>-->
+<!--    <p class="text-center"><strong>Bio: </strong><br>-->
+<!--        {{profile.user}}</p>-->
+<!--    <br>-->
+
+<!--    <p class="text-center"><strong>Bio: </strong><br>-->
+<!--        {{profile.bio}}</p>-->
+<!--    <br>-->
+<!--    <p class="text-center"><strong>Bio: </strong><br>-->
+<!--        {{profile.join_date}}</p>-->
+<!--    <br>-->
+<!--</center>-->
+<!--<div class="row">-->
+<!--    <div class="edit-profile">-->
+<!--        <a href="{% url 'accrancher:edit_profile' profile.slug%}">Edit Profile </a><br>-->
+<!--    </div>-->
+<!--</div>-->
