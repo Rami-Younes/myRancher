@@ -22,7 +22,7 @@ from django.contrib.auth import get_user_model
 
 def scrap(request):
     my_list = []
-    url = 'http://172.16.0.111:8080/env/1a5/apps/stacks?which=all'
+    url = 'http://192.168.0.201:8080/env/1a5/apps/stacks?which=all'
     options = Options()
     options.add_argument('--headless')
     options.add_argument('--disable-gpu')
@@ -110,19 +110,11 @@ def edit_profile(request, slug):
     return render(request, 'edit_profile.html',context)
 
 
-# def allusers(request):
-#     name = [str(user) for user in User.objects.all()]
-#     context = {
-#         'name':name
-#     }
-#     return render(request,'stack_detail.html',context)
-
-
-
 def stack_detail(request):
     name = [str(user) for user in User.objects.all()]
 
     if request.method == 'POST':
+
         if request.POST.get('usernames') and request.POST.get('stacknames'):
 
             stack_detail1 = SaveChkbox()
@@ -131,6 +123,7 @@ def stack_detail(request):
             stack_detail1.save()
             messages.success(request, "The Selected Names " + request.POST.get('usernames')+"is Saved")
             #return redirect('/index')
+
 
 
             return  render(request, 'stack_detail.html')
@@ -142,96 +135,6 @@ def stack_detail(request):
     }
 
     return render(request, 'stack_detail.html', context)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    # submitted = False
-    # if request.method == 'POST':
-    #     form = CommunitySelectForm(request.POST)
-    #     if form.is_valid():
-    #         new_form = form.cleaned_data
-    #         # new_form = request.POST.getlist('ModelMultipleChoiceField')
-    #         # for x in new_form:
-    #         #     new_form.append(str(x))
-    #         new_form.save()
-    #
-    #
-    #         return redirect('/index')
-    # else:
-    #
-    #
-    #    form = CommunitySelectForm()
-    #    if 'submitted' in request.GET:
-    #        submitted = True
-    # print(form)
-    # return render(request, 'stack_detail.html', {'form': form})
-
-
-# if request.method == 'POST':
-    #     form = CommunitySelectForm(request.POST)
-    #     if form.is_valid():
-    #         new_form = form.cleaned_data
-    #         new_form.user = request.user
-    #
-    #         new_form.save()
-
-           # new_form.user = request.save(commit=True)
-            #new_form.save()
-
-
-
-
-                #new_form = form.cleaned_data
-            #new_form.user = request.user
-                #new_form.save()
-    #     return redirect('/index')
-    # else:
-    #     form = CommunitySelectForm()
-    #     #if 'submitted' in request.GET:
-    #         #submitted = True
-    #     print(form)
-    # return render(request, 'stack_detail.html', {'form': form})
-
-
-
-# def profile(request,slug):
-#     profile = get_object_or_404(UserProfile,slug=slug)
-#     context = {
-#         'profile':profile,
-#     }
-#
-#     return render(request,'profile.html',context)
 
 
 

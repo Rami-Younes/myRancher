@@ -1,5 +1,9 @@
-
+{% extends "base.html"%}
+{% load static%}
+{% block body%}
 {% for n in name%}
 <ul><a href="{% url 'accrancher:name'  %}"><li><h2>{{n}}</h2></li></a></ul><br>
 {% endfor %}
+{% endblock body%}
+
 
