@@ -1,9 +1,42 @@
-{% extends "base.html"%}
-{% load static%}
-{% block body%}
-{% for n in name%}
-<ul><a href="{% url 'accrancher:name'  %}"><li><h2>{{n}}</h2></li></a></ul><br>
+<html>
+<head>
+    <script  >
+    function valuesender()
+    {
+     var t="";
+     var a =document.getElementById("txt").innerHTML ;
+     t+=a
+     localStorage.setItem("textvalue",t);
+     return false;
+    }
+</script>
+</head>
+<div class="container">
+    <form   action="stack_detail.html">
+        {% for n in name%}
+        <div id="txt">
+
+<ul><a onclick="valuesender()"    href="{% url 'accrancher:name'  %}"><li><h2 >{{n}}</h2></li></a></ul><br>
+
+       </div>
 {% endfor %}
-{% endblock body%}
+
+    </form>
+
+
+</div>
+</body>
+
+
+</html>
+
+
+
+
+<body>
+
+
+
+
 
 

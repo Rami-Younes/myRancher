@@ -26,8 +26,11 @@
 
     });
 </script>
+
+
 </head>
 <body>
+stack:<span id="gg"></span>
 <form method="post">
     {% csrf_token%}
 
@@ -41,14 +44,6 @@
    </div>
        {%endfor%}
 </div>
-
-
-
-
-
-
-
-
 
 <input type="text" id="txtdisplay1"  name="stacknames"/>
 <input type="text" id="txtdisplay" readonly name="usernames"/>
@@ -64,12 +59,10 @@
     {%endif%}
 
 </form>
+   <script >
+    document.getElementById("gg").innerHTML=localStorage.getItem("textvalue");
+</script>
 
-
-
-<!--{% for user in users%}-->
-<!--{{user}}<br>-->
-<!--{%endfor%}-->
 </body>
 </html>
 
