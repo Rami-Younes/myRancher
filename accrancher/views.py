@@ -122,11 +122,12 @@ def stack_detail(request):
             stack_detail1.stacknames = request.POST.get('stacknames')
             stack_detail1.save()
             messages.success(request, "The Selected Names " + request.POST.get('usernames')+"is Saved")
+            return render(request, 'stack_detail.html')
             #return redirect('/index')
 
 
 
-            return  render(request, 'stack_detail.html')
+            #
     else:
         return render(request, 'stack_detail.html')
 

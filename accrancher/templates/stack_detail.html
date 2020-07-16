@@ -30,7 +30,7 @@
 
 </head>
 <body>
-stack:<span id="gg"></span>
+
 <form method="post">
     {% csrf_token%}
 
@@ -44,11 +44,13 @@ stack:<span id="gg"></span>
    </div>
        {%endfor%}
 </div>
-
-<input type="text" id="txtdisplay1"  name="stacknames"/>
+<div class="col-md-12">
+<input type="text" id="txtd"  name="stacknames"/>
 <input type="text" id="txtdisplay" readonly name="usernames"/>
 
 <input type="submit" value="insert-names" class="btn btn-secondary"/>
+</div>
+
 
     <br>
     {% if messages%}
@@ -60,7 +62,7 @@ stack:<span id="gg"></span>
 
 </form>
    <script >
-    document.getElementById("gg").innerHTML=localStorage.getItem("textvalue");
+    document.getElementById("txtd").value=localStorage.getItem("textvalue");
 </script>
 
 </body>

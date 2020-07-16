@@ -1,22 +1,21 @@
-<html>
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <script  >
-    function valuesender()
-    {
-     var t="";
-     var a =document.getElementById("txt").innerHTML ;
-     t+=a
-     localStorage.setItem("textvalue",t);
-     return false;
-    }
-</script>
+
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{% static 'home-static/css/mystyle.css' %}">
 </head>
+<body>
+
+<h2>Choose the Stack</h2>
 <div class="container">
     <form   action="stack_detail.html">
         {% for n in name%}
-        <div id="txt">
-
-<ul><a onclick="valuesender()"    href="{% url 'accrancher:name'  %}"><li><h2 >{{n}}</h2></li></a></ul><br>
+        <div class="col-md-12">
+<input style="" class="button" onclick="valuesender(this);" type="submit" formaction="http://127.0.0.1:8000/index/allusers/" value={{n}} id="txt">
+<!--<ul><a  id="txt" onclick="valuesender(this)" value={{n}}  href="{% url 'accrancher:name'  %}"><li><h2  >{{n}}</h2></li></a></ul><br>-->
 
        </div>
 {% endfor %}
@@ -25,18 +24,18 @@
 
 
 </div>
+        <script type="text/javascript" >
+    function valuesender(e)
+    {
+    var button=e.value
+    localStorage.setItem("textvalue",button);
+    return false;
+
+    }
+
+</script>
 </body>
-
-
 </html>
-
-
-
-
-<body>
-
-
-
 
 
 
